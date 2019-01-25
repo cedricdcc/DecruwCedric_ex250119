@@ -1,0 +1,16 @@
+question 8:
+
+db.getCollection('bioinf_mongo_examen').find({method_of_admission:"TABLET;BUCCAL, SUBLINGUAL"},{"drug":1,"_id":0})
+
+question 9:
+
+db.getCollection('bioinf_mongo_examen').count({percentage_of_side_effects:{$gt:8}})
+
+question 10:
+
+db.getCollection('bioinf_mongo_examen').count({"percentage_of_side_effects":{$gt:10}}
+,{"company":1})
+
+question 11:
+
+//
