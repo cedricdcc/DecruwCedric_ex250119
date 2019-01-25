@@ -1,0 +1,27 @@
+
+=> The first step is to compile the database as is is represented. (UNF-step)
+
+UNF: DB(Personnel_number,Name,Date_of_birth,Lab_code,Lab_name,Research_code,Research_description,Research_supervisor)
+
+=> Next step is to make sure every value is seperate and eery row in the database is unique. This is also the step in which we define the keys that will be responsible for all the values
+
+1NF: DB(Personnel_number,Name,Date_of_birth,Lab_code,Lab_name,Research_code,Research_description,Research_supervisor)
+   keys(personnel_number,Lab_code,Research_code)
+
+
+=> In the following step we will make different tables out of the keys that we have selected
+2NF:
+personnel(Personnel_number,Name,Date_of_birth)
+lab(Lab_code,Lab_name)
+research(Research_code,Research_description,Research_supervisor)
+keys(Personnel_number - Lab_code - Research_code,Research_supervisor)
+
+
+=> in this last step we will look if there are possible relationships that allow us to reduce the redundancy that a database can have.
+3NF:
+
+personnel(Personnel_number,Name,Date_of_birth)
+lab(Lab_code,Lab_name)
+research(Research_code,Research_description,Research_supervisor)
+keys(Personnel_number - Lab_code - Research_code,Research_supervisor)
+
