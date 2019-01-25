@@ -1,0 +1,30 @@
+question 4:
+
+select gene_name,seq_region_end-seq_region_start as leng from gene order by leng asc limit 1;
+
+question 5:
+
+select count(transcript_id) as NOtr, gene.gene_name from join gene g on transcript.gene_id = g.gene_id transcript group by gene_id order by NOtr desc limit 1;
+
+question 6:
+
+
+select count(gene_id) as genes, chromosome from gene where description like "%cancer%" group by chromosome order by genes desc limit 1 offset 1;
+
+
+select count(exon_id) from exon_transcript et join transcript t on et.transcript_id = t.transcript_id
+-> join gene g on t.gene_id = g.gene_id
+-> where chromosome like "5";
+
+question 7:
+
+mysql> select count(exon_id) from exon_transcript;
+| count(exon_id) |
+| 1178393 |
+
+mysql> select count(exon_id) from exon;
+| count(exon_id) |
+| 642590 |
+
+there are more possible transcript per exon then that there are exons . every transcript can be spliced so there are many combinitions, that is why there are more rows in exon_transcript.
+
